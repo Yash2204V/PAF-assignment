@@ -1,4 +1,78 @@
-# React + TypeScript + Vite
+<h3 align="center">🎬 MovieDekho: Your Ultimate Movie Companion 🍿</h3>
+  
+## 📋 <a name="table">Table of Contents</a>
+
+1. 🤖 [Introduction](#introduction)
+2. ⚙️ [Tech Stack](#tech-stack)
+3. 🔋 [Features](#features)
+4. 🤸 [Quick Start](#quick-start)
+
+
+## <a name="introduction">🤖 Introduction</a>
+
+This project leverages the TMDB API to fetch and display a comprehensive list of movies, including popular titles and detailed information about each movie. By integrating with the TMDB API, users can explore a vast collection of movies, view detailed descriptions, and stay updated with the latest popular movies.
+
+## <a name="tech-stack">⚙️ Tech Stack</a>
+
+- React 19
+- TailwindCSS
+- Magic UI
+- ShadCN
+- TypeScript
+
+## <a name="features">🔋 Features</a>
+
+1. **Search Movies with Debouncing**: Efficiently search for movies with a debouncing feature that limits the number of search requests.
+2. **Infinite Scrolling**: Enjoy a seamless browsing experience with infinite scrolling, eliminating the need for pagination.
+3. **TMDB API Integration**: Fetch movie data in JSON format directly from the TMDB API.
+4. **Responsive Design**: Experience a modern, responsive design powered by Magic UI and ShadCN, ensuring a clean and user-friendly interface across all devices.
+
+
+## <a name="quick-start">🤸 Quick Start</a>
+
+Follow these steps to set up the project locally on your machine.
+
+**Prerequisites**
+
+Make sure you have the following installed on your machine:
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
+
+**Cloning the Repository**
+
+```bash
+git clone https://github.com/Yash2204V/paf-assignment
+cd PAF-assignment
+```
+
+**Installation**
+
+Install the project dependencies using npm:
+
+```bash
+npm install
+```
+
+**Set Up Environment Variables**
+
+Create a new file named `.env` in the root of your project and add the following content:
+Note: You must have a TMDB Api before proceeding further
+
+```env
+VITE_API_KEY=
+```
+
+
+**Running the Project**
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:5173/](http://localhost:5173/) in your browser to view the project.
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -48,4 +122,3 @@ export default tseslint.config({
   },
 })
 ```
-"# PAF-assignment" 
