@@ -5,16 +5,24 @@ import { useEffect } from "react"
 import axios from "axios"
 import { useRecoilState, useSetRecoilState } from "recoil"
 import { searchedMoviesAtom, searchQueryAtom } from "@/stores/atom"
+import { useDebounce } from "@/hooks/useDebounce"
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useRecoilState(searchQueryAtom);
   const setSearchedMovies = useSetRecoilState(searchedMoviesAtom);
+    const debouncedSearchQuery = useDebounce(searchQuery, 500);
 
-  useEffect(()=>{
-    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${import.meta.env.VITE_API_KEY}&language=es&query=${searchQuery}`)
-    .then(response => setSearchedMovies(response.data.results))
-    .catch(err => console.error(err));
-  }, [searchQuery, setSearchedMovies])
+  useEffect(() => {
+    if (debouncedSearchQuery) {
+      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${import.meta.env.VITE_API_KEY}&language=es&query=${debouncedSearchQuery}`)
+        .then(response => setSearchedMovies(response.data.results))
+        .catch(err => console.error(err));
+    } else {
+      setSearchedMovies([]);
+    }
+  }, [debouncedSearchQuery]);
+
+
 
   return (
     <header className="p-2 px-3 md:px-20 lg:px-36 h-fit">
